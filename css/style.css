@@ -1,0 +1,112 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family:Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family:Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2{
+    text-align:center;
+  }
+
+li{
+    margin-top: 20px;
+}
+
+img{
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+  }
+
+.label{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Một cột */
+    gap: 10px; /* Khoảng cách giữa các phần tử */
+    padding: 10px; /* Khoảng cách bên trong */
+  }
+  
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 10px; /* Làm tròn góc mặc định */
+    padding: 10px;
+  }
+  
+  img {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá container */
+    height: auto;
+    border-radius: 5px; /* Làm tròn nhẹ hình ảnh */
+  }
+  
+  figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  @media screen and (min-width: 772px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+
+    figure {
+      border-radius: 50%; 
+    }
+
+    figure:last-child {
+      grid-column: span 2; 
+    }
+  }
+
+  /* Large screen view: Trigger at 992px */
+  @media screen and (min-width: 992px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+
+    figure {
+      border-radius: 0; 
+    }
+
+    figure:nth-child(3n) {
+      grid-column: span 2; 
+    }
+  }
+
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto; /* Remove smooth scrolling */
+    }
+  }
+  
+
+  @media (prefers-color-scheme: dark) {
+    figure {
+      background-color: #333; /* Dark background color */
+      color: #FFD700; /* Yellow-ish font color */
+      border-color: black; /* Black border */
+    }
+    figure, figure figcaption {
+        color: #FFD700; /* Yellow-ish font color */
+      }
+  }
